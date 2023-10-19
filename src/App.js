@@ -21,7 +21,11 @@ export default function App() {
     sortedList = list.slice().filter((item) => !item.isDone);
 
   function handleReset() {
-    setList([]);
+    const confirmed = window.confirm(
+      "Are you sure you want to reset the todo list?"
+    );
+
+    if (confirmed) setList([]);
   }
 
   function handleSortInput() {
